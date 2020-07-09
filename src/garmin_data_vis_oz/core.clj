@@ -138,7 +138,8 @@
       (catch java.time.format.DateTimeParseException dtpe
         (throw (ex-info (.getMessage dtpe)
                         {:colon-delimited-duration cdd
-                         :parsable parsable}))))))
+                         :parsable parsable}
+                        dtpe))))))
 
 (defn raw-csv-activity->activity-hashmap [raw-csv-activity]
   (let [[type
